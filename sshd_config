@@ -1,0 +1,22 @@
+# This file is copied to the Docker container to configure the SSH daemon.
+
+# Port to listen on
+Port 22
+
+# Disable root login for better security.
+PermitRootLogin prohibit-password
+
+# Enable password-based authentication
+PasswordAuthentication yes
+
+# Also allow public key authentication for future use with Ansible
+PubkeyAuthentication yes
+
+# Do not allow logins from accounts with empty passwords.
+PermitEmptyPasswords no
+
+# Disable PAM (Pluggable Authentication Modules) as it's not needed for this simple setup.
+UsePAM no
+
+# Specify the SFTP server subsystem
+Subsystem sftp /usr/lib/openssh/sftp-server

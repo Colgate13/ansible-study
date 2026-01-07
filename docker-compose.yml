@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  debian-vps:
+    build: .
+    container_name: debian-vps
+    hostname: debian-vps
+    ports:
+      - "2222:22"
+    networks:
+      - ansible-net
+
+networks:
+  ansible-net:
+    driver: bridge
