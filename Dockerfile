@@ -12,11 +12,11 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /var/run/sshd
 
 # senha do root
-RUN echo "root:martine123" | chpasswd
+RUN echo "root:senha123" | chpasswd
 
 # usuário gabriel
 RUN useradd -m -s /bin/bash gabriel \
-    && echo "gabriel:martine123" | chpasswd \
+    && echo "gabriel:senha123" | chpasswd \
     && usermod -aG sudo gabriel \
     && echo "gabriel ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
